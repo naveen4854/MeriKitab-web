@@ -4,18 +4,16 @@ angular.module('meriKitab')
       postWithParams : function(url,data){
         var req = {
                    method: 'POST',
-                   url: url,
-
+                   url: "http://localhost:8080" + url,
                    data: data
-                  }
+                 };
         return $http(req);
       },
       executeGet : function(url){
         var req = {
                    method: 'GET',
-                   url: url,
-                  
-                  }
+                   url: "http://localhost:8080" + url,
+                 };
          return $http(req);
        }
     }
