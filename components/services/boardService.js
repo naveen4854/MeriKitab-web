@@ -4,8 +4,13 @@ angular.module('meriKitab')
     getBoards : function(){
       return dataContext.executeGet("http://localhost:8080/api/board");
     },
-    addBoard : function(){
-      return dataContext.postWithParams("http://localhost:8080/api/board",{'name':'asdasda','type':'SchoolBoard'});
+    addBoard : function(obj){
+      return dataContext.postWithParams("http://localhost:8080/api/board",obj);
+    },
+
+
+    addFranchise : function(obj){
+      return dataContext.postWithParams("http://localhost:8080/api/franchise",obj);
     }
   }
 }]);
