@@ -5,6 +5,10 @@ angular.module('meriKitab', ['ngRoute'])
       templateUrl: '/features/board/board.html',
       controller: 'boardController'
     })
+    .when('/franchise', {
+      templateUrl: '/features/franchise/franchise.html',
+      controller: 'franchiseController'
+    })
     .otherwise({redirectTo: '/'});
     ;
 }]);

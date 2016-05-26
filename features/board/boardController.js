@@ -11,13 +11,4 @@ angular.module('meriKitab')
 
     });
   }
-    //boardService.addBoard();
-
-
-      $scope.franchise ={};
-      $scope.addFranchise = function(){
-        boardService.addFranchise($scope.franchise).success(function(data){
-
-        });
-      }
 }]);
