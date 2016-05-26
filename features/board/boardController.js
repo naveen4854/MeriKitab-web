@@ -8,7 +8,9 @@ angular.module('meriKitab')
   $scope.board ={};
   $scope.addBoard = function(){
     boardService.addBoard($scope.board).success(function(data){
-
+      boardService.getBoards().success(function(data){
+        $scope.boards = data;
+      });
     });
   }
 }]);

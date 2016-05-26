@@ -1,6 +1,15 @@
-<div ng-repeat="board in boards"><h2> {{board.name}} </h2></div>
+<h1>Boards available</h1>
+<div ng-repeat="board in boards">
+  <h2> {{board.name}} </h2>
+</div>
+
 <form novalidate ng-submit="addBoard()">
   <input type="text" ng-model="board.name"><br>
-  <input type="text" ng-model="board.type"><br>
+  <select name="singleSelect" ng-model="board.type">
+    <option value="">---Please select a type---</option>
+    <option value="SchoolBoard">SchoolBoard</option>
+    <option value="University">University</option>
+    <option value="CoachingInstitute">CoachingInstitute</option>
+  </select><br>
   <input type="submit" value="submit"><br>
 </form>
