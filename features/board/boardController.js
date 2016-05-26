@@ -1,11 +1,8 @@
 angular.module('meriKitab')
 .controller('boardController',['$scope','$http','boardService',function($scope, $http, boardService){
-  $scope.books =[
-      {id:0,name:'dev'},
-      {id:0,name:'tpasd'},
-      {id:0,name:'uat'},
-      {id:0,name:'tes'}
-    ];
+  $scope.boards = {};
+  boardService.getBoards().success(function(data){
+    $scope.boards = data;
+  });
     //boardService.addBoard();
-    boardService.getBoards();
 }]);
