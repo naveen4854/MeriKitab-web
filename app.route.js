@@ -5,5 +5,6 @@ angular.module('meriKitab', ['ngRoute'])
       templateUrl: '/features/board/board.html',
       controller: 'boardController'
     })
+    .otherwise({redirectTo: '/'});
     ;
 }]);

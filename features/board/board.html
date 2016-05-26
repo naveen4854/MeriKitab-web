@@ -1,14 +1,6 @@
-boards
 <div ng-repeat="board in boards"><h2> {{board.name}} </h2></div>
 <form novalidate ng-submit="addBoard()">
   <input type="text" ng-model="board.name"><br>
   <input type="text" ng-model="board.type"><br>
-  <input type="submit" value="submit"><br>
-</form>
-
-
-<form novalidate ng-submit="addFranchise()">
-  <input type="text" ng-model="franchise.name"><br>
-  <input type="text" ng-model="franchise.board"><br>
   <input type="submit" value="submit"><br>
 </form>
