@@ -1,6 +1,4 @@
 angular.module('meriKitab')
-  .factory('config',[,function(){
-    return {
-      urlExt : "http://localhost:8080",
-    }
-  }]);
+.constant("myConfig", {
+      "urlExt": "http://localhost:8080"
+  });

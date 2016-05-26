@@ -1,10 +1,10 @@
 angular.module('meriKitab')
-  .factory('dataContext',['$http',function($http){
+  .factory('dataContext',['$http','myConfig',function($http, myConfig){
     return {
       postWithParams : function(url,data){
         var req = {
                    method: 'POST',
-                   url: "http://localhost:8080" + url,
+                   url: myConfig.urlExt + url,
                    data: data
                  };
         return $http(req);
@@ -12,7 +12,7 @@ angular.module('meriKitab')
       executeGet : function(url){
         var req = {
                    method: 'GET',
-                   url: "http://localhost:8080" + url,
+                   url: myConfig.urlExt + url,
                  };
          return $http(req);
        }
