@@ -4,14 +4,19 @@
 <meta charset="utf-8">
 <title></title>
 </head>
-<body>
-  <div header></div>
-  <div ng-view></div>
-  <div footer></div>
+<body ng-controller="applicationController" >
+  <div ng-if="currentUser">Welcome, {{ currentUser.username }}
+  </div>
+    <div ui-view="header"></div>
+    <div ui-view="content"></div>
+    <div ui-view="footer"></div>
+    <div login-dialog></div>
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
   <script type="text/javascript" src="/content/js/angular-route.js"></script>
+  <script type="text/javascript" src="/content/js/ui-router.js"></script>
+
   <script type="text/javascript" src="/app.module.js"></script>
   <script type="text/javascript" src="/app.route.js"></script>
 
@@ -19,11 +24,19 @@
   <script type="text/javascript" src="/components/data/dataContext.js"></script>
 
   <script type="text/javascript" src="/features/header/headerDirective.js"></script>
+  <script type="text/javascript" src="/features/header/headerCtrl.js"></script>
   <script type="text/javascript" src="/features/footer/footerDirective.js"></script>
+  <script type="text/javascript" src="/features/footer/footerCtrl.js"></script>
 
+  <script type="text/javascript" src="/features/applicationController.js"></script>
   <script type="text/javascript" src="/features/board/boardController.js"></script>
-  <script type="text/javascript" src="/components/services/boardService.js"></script>
   <script type="text/javascript" src="/features/franchise/franchiseController.js"></script>
+  <script type="text/javascript" src="/features/login/loginController.js"></script>
+  <script type="text/javascript" src="/features/login/loginDirective.js"></script>
+
+  <script type="text/javascript" src="/components/services/boardService.js"></script>
   <script type="text/javascript" src="/components/services/franchiseService.js"></script>
+  <script type="text/javascript" src="/components/services/authService.js"></script>
+  <script type="text/javascript" src="/components/services/sessionService.js"></script>
 </body>
 </html>
