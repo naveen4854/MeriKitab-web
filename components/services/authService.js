@@ -1,19 +1,19 @@
 angular.module('meriKitab')
-.factory('AuthService',['Session','dataContext', function (Session, dataContext) {
+.factory('AuthService',['Session', 'dataContext', '$rootScope', function (Session, dataContext, $rootScope) {
   var authService = {};
 
   authService.login = function (credentials) {
     return dataContext.postWithParams('/api/login', credentials).success(function(res){
       console.log(res);
-      Session.create(res.access_token, '123',
-                      'admin'); // TODO update to original api
+      $rootScope.user = res;
+      Session.create(res); // TODO update to original api
       return res;
     });
   };
 
   authService.isAuthenticated = function () {
     //return !!Session && !!Session.userId;
-    return !!Session.userId;
+    return !!$rootScope.user;
   };
 
   authService.isAuthorized = function (authorizedRoles) {
@@ -22,7 +22,7 @@ angular.module('meriKitab')
   //  }
     //return (authService.isAuthenticated() &&
     //  authorizedRoles.indexOf(Session.userRole) !== -1);
-    return true;
+    return !!$rootScope.user;
   };
 
   return authService;

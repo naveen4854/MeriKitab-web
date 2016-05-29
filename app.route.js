@@ -1,6 +1,6 @@
 angular.module('meriKitab')
-.config(function ($stateProvider, myConfig) {
-  $stateProvider
+    .config(function($stateProvider, myConfig) {
+        $stateProvider
             .state('home', {
                 url: "/",
                 views: {
@@ -18,16 +18,16 @@ angular.module('meriKitab')
                     }
                 },
                 data: {
-                  authorizedRoles: [myConfig.USER_ROLES.admin, myConfig.USER_ROLES.editor]
+                    authorizedRoles: [myConfig.USER_ROLES.admin, myConfig.USER_ROLES.editor]
                 }
             })
             .state('board', {
                 url: "/board",
                 views: {
-                  'header': {
-                      controller: 'headerController',
-                      templateUrl: "/features/header/header.html",
-                  },
+                    'header': {
+                        controller: 'headerController',
+                        templateUrl: "/features/header/header.html",
+                    },
                     'content': {
                         controller: 'boardController',
                         templateUrl: '/features/board/board.html',
@@ -38,16 +38,16 @@ angular.module('meriKitab')
                     }
                 },
                 data: {
-                  authorizedRoles: [myConfig.USER_ROLES.admin, myConfig.USER_ROLES.editor]
+                    authorizedRoles: [myConfig.USER_ROLES.admin, myConfig.USER_ROLES.editor]
                 }
             })
             .state('franchise', {
                 url: "/franchise",
                 views: {
-                  'header': {
-                      controller: 'headerController',
-                      templateUrl: "/features/header/header.html",
-                  },
+                    'header': {
+                        controller: 'headerController',
+                        templateUrl: "/features/header/header.html",
+                    },
                     'content': {
                         controller: 'franchiseController',
                         templateUrl: '/features/franchise/franchise.html',
@@ -58,7 +58,7 @@ angular.module('meriKitab')
                     }
                 },
                 data: {
-                  authorizedRoles: [myConfig.USER_ROLES.admin, myConfig.USER_ROLES.editor]
+                    authorizedRoles: [myConfig.USER_ROLES.admin, myConfig.USER_ROLES.editor]
                 }
             })
             .state('login', {
@@ -70,8 +70,7 @@ angular.module('meriKitab')
                     }
                 },
                 data: {
-                  authorizedRoles: [myConfig.USER_ROLES.admin, myConfig.USER_ROLES.editor]
+                    authorizedRoles: [myConfig.USER_ROLES.admin, myConfig.USER_ROLES.editor]
                 }
             });
-})
-;
+    });
