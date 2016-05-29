@@ -31,6 +31,10 @@ angular.module('meriKitab')
                     'content': {
                         controller: 'boardController',
                         templateUrl: '/features/board/board.html',
+                    },
+                    'footer': {
+                        controller: 'footerController',
+                        templateUrl: "/features/footer/footer.html",
                     }
                 },
                 data: {
@@ -40,9 +44,17 @@ angular.module('meriKitab')
             .state('franchise', {
                 url: "/franchise",
                 views: {
+                  'header': {
+                      controller: 'headerController',
+                      templateUrl: "/features/header/header.html",
+                  },
                     'content': {
                         controller: 'franchiseController',
                         templateUrl: '/features/franchise/franchise.html',
+                    },
+                    'footer': {
+                        controller: 'footerController',
+                        templateUrl: "/features/footer/footer.html",
                     }
                 },
                 data: {
